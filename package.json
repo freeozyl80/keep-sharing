@@ -1,0 +1,25 @@
+{
+  "name": "keep-sharing",
+  "version": "1.0.0",
+  "description": "* 设计模式 * AOP编程 * loc 控制反转/依赖反转",
+  "main": "index.js",
+  "dependencies": {
+    "esbuild": "^0.12.9",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "react-test": "node ./react-demo/bin/build.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/freeozyl80/keep-sharing.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/freeozyl80/keep-sharing/issues"
+  },
+  "homepage": "https://github.com/freeozyl80/keep-sharing#readme"
+}
