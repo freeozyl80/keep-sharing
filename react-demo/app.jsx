@@ -1,5 +1,7 @@
-import * as React from 'react'
-import * as Server from 'react-dom/server'
+import * as React from 'react';
+import { render } from 'react-dom';
 
 let Greet = () => <h1>Hello, world!</h1>
-console.log(Server.renderToString(<Greet />))
+
+
+render(<Greet />, document.getElementById('app'))

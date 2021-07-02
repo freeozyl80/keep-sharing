@@ -1,0 +1,33 @@
+
+{
+  "include": ["**/*.*"],
+  "compilerOptions": {
+    "baseUrl": "/Users/zhangyunlu/code/go/projects/2021/keep-sharing/vue-demo",
+    "importHelpers": true,
+    "jsx": "preserve",
+    "jsxFactory": "VueTsxSupport",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "sourceMap": false,
+    "skipLibCheck": true,
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "noEmit": true,
+    "lib": [
+      "esnext",
+      "dom",
+      "dom.iterable",
+      "scripthost"
+    ]
+  },
+  "jsRules": {
+    "no-empty": true
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}

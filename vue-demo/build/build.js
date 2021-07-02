@@ -4,14 +4,14 @@ const cwd = path.resolve(dir, '../')
 const serverDir = path.resolve(cwd, './public')
 
 require('esbuild').serve({
-	port: 8888,
-	servedir: serverDir
+  port: 8888,
+  servedir: serverDir
 }, {
-  entryPoints: [path.resolve(dir, './app.jsx')],
+  entryPoints: [path.resolve(dir, './main.ts')],
   bundle: true,
-  outfile: path.resolve(serverDir, './reactApps/app.js')
+  outfile: path.resolve(serverDir, './vueApps/app.js')
 }).catch((e) => {
-	console.log(e)
+  console.log(e)
 })
 
 
