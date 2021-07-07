@@ -1,19 +1,17 @@
 
 {
-  "include": ["**/*.*", "@types/*.d.ts","node_modules/vue-tsx-support/enable-check.d.ts"],
+  "include": ["**/*.*"],
   "compilerOptions": {
-    "baseUrl": ".",
+    "baseUrl": "/Users/zhangyunlu/code/go/projects/2021/keep-sharing/vue-demo",
     "importHelpers": true,
-    "jsx": "preserve",
-    "jsxFactory": "VueTsxSupport",
+    "jsx": "react",
     "experimentalDecorators": true,
     "emitDecoratorMetadata": false,
-    "sourceMap": true,
+    "sourceMap": false,
     "skipLibCheck": true,
     "target": "esnext",
     "module": "esnext",
     "moduleResolution": "node",
-    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
     "allowJs": true,

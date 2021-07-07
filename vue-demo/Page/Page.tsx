@@ -1,25 +1,23 @@
-import { Vue, Component } from 'vue-property-decorator'
-import * as tsx from 'vue-tsx-support'
+import { VNode } from "vue";
+import * as tsx from "vue-tsx-support";
 
 
-interface MyComponentProps {
-  param?: string
-}
-
-
-@Component
-export default class Demo5 extends tsx.Component<MyComponentProps> {
-  created() {
+const MyComponent = tsx.componentFactory.create({
+  props: {
+    text: { type: String, required: true },
+    important: Boolean,
+  } as const, // `as const` is needed in some cases.
+  computed: {
+    className(): string {
+      return this.important ? "label-important" : "label-normal";
+    }
+  },
+  methods: {
+    onClick(event: Event) { this.$emit("ok", event); }
+  },
+  render(): VNode {
+    return <span class={this.className} onClick={this.onClick}>{this.text}</span>;
   }
+});
 
-  mounted() {
-  }
-
-  render() {
-    return (
-      <div>
-        <div>Hello World</div>
-      </div>
-    )
-  }
-}
+export default MyComponent
