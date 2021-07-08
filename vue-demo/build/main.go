@@ -9,7 +9,7 @@ func main() {
   fmt.Println("构建启动 ～")
 
   dir, _ := os.Getwd()
-  entryFile := filepath.Join(dir, "..", "main.tsx")
+  entryFile := filepath.Join(dir, "..", "main.ts")
   tsConfig := filepath.Join(dir, "..", "tsConfig.json")
   serverDir := filepath.Join(dir, "..", "..", "public")
 

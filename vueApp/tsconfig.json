@@ -1,6 +1,4 @@
-
 {
-  "include": ["**/*.*", "@types/*.d.ts","node_modules/vue-tsx-support/enable-check.d.ts"],
   "compilerOptions": {
     "baseUrl": ".",
     "importHelpers": true,
@@ -26,10 +24,5 @@
       "scripthost"
     ]
   },
-  "jsRules": {
-    "no-empty": true
-  },
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
 }

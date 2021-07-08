@@ -1,0 +1,1 @@
+[Vite支持vue2 的 plugin](https://github.com/underfin/vite-plugin-vue2/tree/master/#readme)
