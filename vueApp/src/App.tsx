@@ -6,11 +6,11 @@ import MyComponent from './Page/Page';
   name: 'Home'
 })
 export default class App extends Vue {
-  protected render() {
+  render() {
     console.log('japhy')
     return(
       <div id="wrapper">
-        <MyComponent text="data"></MyComponent>
+        <MyComponent text={"data"} important={ false }></MyComponent>
       </div>
     )
   }

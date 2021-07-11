@@ -6,7 +6,7 @@
     "isolatedModules": true,
     "jsxFactory": "VueTsxSupport",
     "experimentalDecorators": true,
-    "emitDecoratorMetadata": false,
+    "emitDecoratorMetadata": true,
     "sourceMap": true,
     "skipLibCheck": true,
     "target": "esnext",
