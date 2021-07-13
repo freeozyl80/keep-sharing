@@ -25,9 +25,18 @@ export function RollupPluginSwc(options: Options): Plugin {
           ...config,
           filename: id,
         })
-        //console.log(result.code)
+        console.log(code == result.code)
+        console.log(result.code)
+        const mycode = require("@babel/core").transformSync(code, {
+  filename: id,
+  presets: ['@babel/preset-env'],
+  plugins:  [
+    ["@babel/plugin-proposal-decorators", { decoratorsBeforeExport: true }],
+    ["@babel/plugin-proposal-class-properties"]
+  ]
+});
         return {
-          code: result.code,
+          code: mycode, //result.code,
           map: result.map
         }
       }
