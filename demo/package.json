@@ -4,12 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "ts-node ./inject.ts --project tsconfig.json",
+    "test2": "ts-node ./inject2.ts --project tsconfig.json"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^16.3.1",
     "tslib": "^2.3.0"
+  },
+  "dependencies": {
+    "reflect-metadata": "^0.1.13",
+    "ts-node": "^10.1.0"
   }
 }

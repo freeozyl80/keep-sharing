@@ -1,34 +1,52 @@
 import path from 'path'
-import { esbuildDecorators } from '@anatine/esbuild-decorators'
 import { defineConfig } from 'vite'
 import tsconfigPaths from 'vite-tsconfig-paths'
-import {createVuePlugin} from 'vite-plugin-vue2'
-import babel from "@rollup/plugin-babel"
+import { createVuePlugin } from 'vite-plugin-vue2'
+import { RollupPluginSwc } from './plugin/swc.ts'
+import legacyPlugin from 'vite-plugin-legacy'
+
+
 
 export default defineConfig({
-  esbuild: {
-    // plugins: [
-    //   esbuildDecorators({
-    //     tsconfig: path.resolve(__dirname, './tsconfig'),
-    //     cwd: path.resolve(__dirname),
-    //     tsx: true
-    //   })
-    // ],
-  },
   plugins: [
-    // tsconfigPaths({
-    //   root: path.resolve(__dirname, './'),
-    //   projects: ["tsconfig.json"]
+    // legacyPlugin({
+    //   "targets": {
+    //     'ie': 9
+    //   },
+    //   additionalLegacyPolyfills: ['regenerator-runtime/runtime'],
+    //   polyfills: [
+    //     'es.object.define-properties',
+    //     'es.object.define-property',
+    //     'es.object.define-setter',
+    //     'es.array.iterator',
+    //     'es.promise',
+    //     'es.object.assign',
+    //     'es.promise.finally'
+    //   ]
     // }),
-    // babel({
-    //   include: [ './src/**'],
-    //   babelHelpers: 'bundled'
-    // }),
-    // createVuePlugin({
-    //   jsx: true,
-    //   jsxOptions: {
-    //     compositionAPI: true,
-    //   }
-    // })
+    RollupPluginSwc({
+      "jsc": {
+        "target": "es2018",
+        "parser": {
+          "syntax": "typescript",
+          "decorators": true,
+          "dynamicImport": false
+        },
+        "transform": {
+          "legacyDecorator": false,
+          "decoratorMetadata": true
+        }
+      }
+    }),
+    createVuePlugin({
+      // jsx: true,
+      // jsxOptions: {
+      //   compositionAPI: true,
+      // }
+    }),
+    tsconfigPaths({
+      // root: path.resolve(__dirname, './'),
+      // projects: ["tsconfig.json"]
+    })
   ]
 })
