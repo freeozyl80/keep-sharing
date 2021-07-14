@@ -4,9 +4,12 @@
 <script lang='ts'>
 import { Vue, Component, Prop } from 'vue-property-decorator'
 import { Log } from '../lib/decorator.ts'
-
+import KeepService from '../service/index.ts'
 
 @Component({
+  viewInject: {
+    keepService: KeepService
+  },
   name: 'HelloKeep'
 })
 export default class HelloKeep extends Vue {
@@ -17,6 +20,7 @@ export default class HelloKeep extends Vue {
   }
   mounted() {
     this.hello("mounted!")
+    console.log(this.keepService.getInfo())
   }
 }
 </script>

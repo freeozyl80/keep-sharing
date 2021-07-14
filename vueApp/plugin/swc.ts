@@ -2,7 +2,6 @@ import { createFilter } from '@rollup/pluginutils';
 import { Options, transform } from '@swc/core';
 import { Plugin } from 'vite';
 import { cleanUrl } from './utils.ts';
-
 export function RollupPluginSwc(options: Options): Plugin {
   // todo: load swc/tsconfig from config files
   const config: Options = {
@@ -27,16 +26,8 @@ export function RollupPluginSwc(options: Options): Plugin {
         })
         console.log(code == result.code)
         console.log(result.code)
-        const mycode = require("@babel/core").transformSync(code, {
-  filename: id,
-  presets: ['@babel/preset-env'],
-  plugins:  [
-    ["@babel/plugin-proposal-decorators", { decoratorsBeforeExport: true }],
-    ["@babel/plugin-proposal-class-properties"]
-  ]
-});
         return {
-          code: mycode, //result.code,
+          code: code, //result.code,
           map: result.map
         }
       }
