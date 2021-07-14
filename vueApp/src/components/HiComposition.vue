@@ -1,12 +1,14 @@
 <template>
   <div class="about">
     <h1>info</h1>
-    <p>{{ number }}</p>
+    <Tool :number=number v-if="number < 4"></Tool>
     <button @click="addCount" type="primary">add</button>
     <p>{{fullInfo}}</p>
   </div>
 </template>
 <script lang="ts">
+
+import Tool from "./Tool.vue"
 import { ref, reactive, defineComponent, computed } from "@vue/composition-api";
 
 interface CompostionInfo {
@@ -16,6 +18,9 @@ interface CompostionInfo {
 export default defineComponent({
   props: {
     msg: String
+  },
+  components: {
+    Tool
   },
   setup(props) {
     const number = ref(0);
