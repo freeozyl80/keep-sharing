@@ -4,7 +4,7 @@
   </div>
 </template>
 <script lang="ts">
-import { ref, reactive, defineComponent, computed, watch, watchEffect, onBeforeUnmount } from "@vue/composition-api";
+import { ref, reactive, defineComponent, computed, watch, watchEffect, onBeforeUnmount, inject, onMounted } from "@vue/composition-api";
 
 let pendingRequest = function (number) {
   return new Promise((resolve, reject) => {
@@ -22,6 +22,11 @@ export default defineComponent({
   },
   setup(props) {
     let end = false
+    const {author} = inject('author')
+
+    onMounted(()=>{
+      console.log('@author', author.value)
+    })
 
     watch(
       () => props.number,
@@ -59,9 +64,6 @@ export default defineComponent({
         console.log("[传统watch]number has changed:", val)
       }, 1000)
     }
-  },
-  mounted() {
-    console.log('???')
   },
   beforeDestroy() {
     console.log('组件没了')

@@ -9,8 +9,15 @@
 <script lang="ts">
 
 import Tool from "./Tool.vue"
-import { ref, reactive, defineComponent, computed } from "@vue/composition-api";
+import { ref, reactive, defineComponent, computed, provide } from "@vue/composition-api";
 
+const asyncData = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve('japhy')
+    }, 1000) 
+  })
+}
 interface CompostionInfo {
   version: number;
   name: string;
@@ -30,6 +37,14 @@ export default defineComponent({
     });
     const addCount = () => number.value++;
     const fullInfo = computed(() => props.msg + ":" + obj.name + "@" + obj.version);
+
+    let author = ref("unknnown")
+    asyncData().then((res) => {
+      author.value = res
+    })
+    provide('author', {author})
+
+
     return {
       number,
       obj,

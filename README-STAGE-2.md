@@ -386,8 +386,108 @@ var Child = {
 
 * 再谈前端框架的应用
 
+这里Demo 示例：Vue 	结合 控制反转
+
+* 二谈前端框架的应用 （事件驱动编程， 这块感觉应该后置一点）
+ 
+ 前言：
+
+ Angular - class: class 天生具有 自解释性 , 因此代码的可读性，可维护性都会比其他封装结构高得多
+ React - function : 函数的封装性,需要保证其返回结果只由输入决定,运行过程中不会产生其他变化
+ Vue - proxy Object: 既然 js 本身已经有如此易用的机制，为何不直接采用 proxy object 进行封装呢 如果你的目标主要就是 解决问题 ，Vue 是个非常方便且易学的方案
+
+// Vue badcode:
+
+// 这块感觉更适合 函数式编程去讲
+
+```javascript
+// 监听数据，执行副作用，然后在组件无效时，清除副作用
+const parentData = inject('parentData')
+watch(formModel, (reqData, _, invalidate) => {
+  const handle = request(reqData).then(() => {
+    // ... some logic
+  })
+  invalidate(() => {
+    handle.cancel
+  })
+})
+
+```
+对于异步事件来说，取消事件监听，不可取消事件回调。
+
+```
+// vue
+onMounted(()=>{
+  request(someData).then((res)=>{
+    localData.value = res
+  })
+})
+
+/*-- 分割线 ---- */
 
 
+// parent
+let base = ref(null)
+requestBaseData((res)=>{
+  base.value = res
+})
+provide('parentBase', {base})
+
+// child
+const {base} = inject('parentBase')
+onMounted(()=>{
+  request(base.value).then((res)=>{
+    localData.value = res
+  })
+})
 
 
+/*-- 分割线 ---- */
 
+
+// vue
+// child
+const {base} = inject('parentBase')
+watch(base, (res)=>{
+  request(base.value).then((res)=>{
+    localData.value = res
+  }),
+  {
+    immediate: false // 默认 false 避开 base 默认值
+  }
+})
+
+```
+
+所以： React 有 useLayoutEffect / useEffect， Vue: watch/watchEffect, Angular: pipe
+绕过生命周期
+
+
+* 三谈前端框架应用 （SOA -> DDD）
+
+1. SOA： 面向服务架构：把系统按照实际业务，拆分成刚刚好大小的、合适的、独立部署的模块，每个模块之间相互独立。
+
+针对前端项目而言，就是对功能单元的拆分，区别于传统组件值拆分 视图 和 内部逻辑，结合之前的 LOC / DI
+
+状态逻辑：状态 + 状态化事件 + 响应式流
+
+区分 逻辑单元 和 视图单元：
+
+[文章推荐](https://juejin.cn/post/6968666544914038820)  但是Vue 相较 React 的好处是不用担心组件重绘，
+
+2. 数据上的聚合 
+
+LIFT文件划分：力求：快速定位 (Locate) 代码、一眼识别 (Identify) 代码、 尽量保持扁平结构 (Flattest) 和尝试 (Try) 遵循 DRY (Do Not Repeat Yourself, 不重复自己) 原则
+```
+app/ 
+	user/
+		user.service
+		user.service.test
+		user.vue
+		userComponent/
+			xxx.vue
+```
+
+[这里放一篇React 结合 DDD 的概念](https://juejin.cn/post/6969217080386125861)
+
+当然最终结合的 [Nest.js](https://github.com/lujakob/nestjs-realworld-example-app)

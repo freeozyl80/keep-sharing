@@ -1,7 +1,7 @@
 
 import { Injectable } from "../loc/inject";
 
-@Injectable()export interface KeepConfig {
+export interface KeepConfig {
   pageVersion: string,
   bananaName: string
 }
