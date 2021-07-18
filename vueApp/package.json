@@ -9,7 +9,8 @@
   },
   "dependencies": {
     "reflect-metadata": "^0.1.13",
-    "vue": "^2.6.14"
+    "vue": "^2.6.14",
+    "vue-router": "^3.5.2"
   },
   "devDependencies": {
     "@anatine/esbuild-decorators": "^0.2.12",
@@ -17,6 +18,7 @@
     "@babel/plugin-proposal-class-properties": "^7.14.5",
     "@babel/plugin-proposal-decorators": "^7.14.5",
     "@rollup/plugin-babel": "^5.3.0",
+    "@rollup/plugin-typescript": "^8.2.1",
     "@rollup/pluginutils": "^4.1.0",
     "@swc/core": "^1.2.63",
     "@vitejs/plugin-vue": "^1.2.4",
