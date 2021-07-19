@@ -1,0 +1,40 @@
+
+{
+  "include": ["/Users/zhangyunlu/code/go/projects/2021/keep-sharing/keepfeTsxApp/pages/**.*.ts","/Users/zhangyunlu/code/go/projects/2021/keep-sharing/keepfeTsxApp/pages/**.*.tsx","/Users/zhangyunlu/code/go/projects/2021/keep-sharing/keepfeTsxApp/pages/**.*.vue","/Users/zhangyunlu/code/work/2020task/keepfe/node_modules/vue-tsx-support/dist/enable-check.d.ts","/Users/zhangyunlu/code/go/projects/2021/keep-sharing/keepfeTsxApp/**/*.ts","/Users/zhangyunlu/code/go/projects/2021/keep-sharing/keepfeTsxApp/**/*.tsx","/Users/zhangyunlu/code/go/projects/2021/keep-sharing/keepfeTsxApp/**/*.d.ts","/Users/zhangyunlu/code/go/projects/2021/keep-sharing/keepfeTsxApp/**/*.vue"],
+  "compilerOptions": {
+    "baseUrl": "/Users/zhangyunlu/code/go/projects/2021/keep-sharing/keepfeTsxApp",
+    "paths": {"@vuecore/*":["/Users/zhangyunlu/code/go/projects/2021/keep-sharing/keepfeTsxApp/node_modules/@keepfe/vuecore/lib/core/*"],"_app/*":["/Users/zhangyunlu/code/go/projects/2021/keep-sharing/keepfeTsxApp/*"]},
+    "importHelpers": true,
+    
+    "jsx": "preserve",
+    "jsxFactory": "VueTsxSupport",
+    
+    
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "sourceMap": false,
+    "skipLibCheck": true,
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "noEmit": true,
+    "lib": [
+      "esnext",
+      "dom",
+      "dom.iterable",
+      "scripthost"
+    ],
+    "types": [
+      "webpack-env"
+    ]
+  },
+  "jsRules": {
+    "no-empty": true
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}

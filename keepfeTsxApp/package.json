@@ -1,0 +1,43 @@
+{
+  "name": "app1",
+  "version": "1.0.0",
+  "description": "前端项目",
+  "main": "index.js",
+  "scripts": {
+    "dev": "NODE_ENV=pre kpv dev app1",
+    "build": "kpv build app1",
+    "prdlint": "kpv prdlint ./",
+    "difflint": "kpv difflint ./",
+    "depscollect": "kpv depscollect ./",
+    "scancollect": "kpv scancollect ./dist/"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*": "kpv commitlint"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "husky": "^4.2.3",
+    "lint-staged": "^10.0.0-beta.15"
+  },
+  "dependencies": {
+    "@keepfe/node-core": "^1.1.432",
+    "@keepfe/plugin-configjs": "^1.1.148",
+    "@keepfe/plugin-functions": "^1.1.99",
+    "@keepfe/plugin-lint": "^1.1.158",
+    "@keepfe/plugin-node": "^1.1.99",
+    "@keepfe/vuecore": "^1.1.314",
+    "@vue/composition-api": "^1.0.1",
+    "js-cookie": "^2.2.1",
+    "source-map": "^0.7.3",
+    "tslib": "^2.3.0",
+    "vue-class-component": "^7.1.0",
+    "vue-property-decorator": "^9.1.2",
+    "vue-tsx-support": "^3.2.0"
+  }
+}

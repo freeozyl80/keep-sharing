@@ -1,0 +1,36 @@
+@keepcolor: #584f60;
+.demo-component-wrapper {
+  background-color: #f2f2f2;
+  padding: 20px;
+  box-sizing: border-box;
+  color: #333;
+  a {
+    color: skyblue;
+  }
+  button {
+    color: #fff;
+    background: @keepcolor;
+    height: 40px;
+    padding: 0 10px;
+    border-radius: 20px;
+  }
+  li + li {
+    margin-top: 40px;
+  }
+  .title {
+    font-size: 16px;
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background: @keepcolor;
+      border-radius: 100%;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+  }
+  .content {
+    margin-top: 12px;
+  }
+}

@@ -1,0 +1,10 @@
+type:
+  - app # 目前两种类型 app， lib
+apps:
+  - name: infra-cms # banana项目名称
+    target: ./keepva.tar # 构建文件的目标名称，和banana中的配置相同
+    script: build.sh infra-cms # 构建的脚本，可以带参数
+
+notify:
+  wechatHook: https://open.feishu.cn/open-apis/bot/v2/hook/503b4c2b-b73d-4460-ad0e-fa43d81938b4
+  # 构建结果通知的企业微信机器人地址，建议都用自己部门的
