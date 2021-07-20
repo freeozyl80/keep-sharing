@@ -6,7 +6,9 @@
   "scripts": {
     "test": "ts-node ./inject.ts --project tsconfig.json",
     "test2": "ts-node ./inject2.ts --project tsconfig.json",
-    "test3": "ts-node ./interface_abstract.ts --project tsconfig.json"
+    "test3": "ts-node ./interface_abstract.ts --project tsconfig.json",
+    "test4": "ts-node ./error.ts --project tsconfig.json",
+    "test5": "ts-node ./polymorphism.ts --project tsconfig.json"
   },
   "author": "",
   "license": "ISC",
