@@ -1,5 +1,6 @@
 <template>
   <div>
+    <div>-----</div>
     <p>{{JSON.stringify(data)}}</p>
     <p>{{JSON.stringify(test)}}</p>
     <p>{{JSON.stringify(msg)}}</p>

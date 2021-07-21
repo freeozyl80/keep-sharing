@@ -14,6 +14,9 @@ let pendingRequest = function (number) {
   })
 }
 
+let mockRequest = (value) => {
+  console.log('@author', value)
+}
 let faild = false
 
 export default defineComponent({
@@ -25,7 +28,7 @@ export default defineComponent({
     const {author} = inject('author')
 
     onMounted(()=>{
-      console.log('@author', author.value)
+      mockRequest(author.value) // 假如这里是发送请求
     })
 
     watch(

@@ -4,7 +4,10 @@ import { Injectable } from '../vueApp/src/loc/inject';
 @Injectable()
 class AuthService {
   name = 'authService'
+  constructor(){
+  }
 }
+
 @Injectable()
 class RouterService {
   name = 'routerService'

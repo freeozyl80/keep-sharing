@@ -205,10 +205,10 @@ class HtmlDownloader {
 }
 
 
-
-// 1. 构造函数 中 downloadHTml 逻辑复杂，不应放在构造函数中，影响代码可读性
-// 2。HtmlDownloader 对象在构造函数中通过new来创建，违反了基于接口而非实现编程的设计思想
-// 3. 从业务上 Document 网页文档没必要毅力啊HtmlDownloader，违背了迪米特法则
+// NetworkTransporter 底层网路通信，参数确是HtmlRequest, 不能仅服务于html
+// Document构造函数 中 downloadHTml 逻辑复杂，不应放在构造函数中，影响代码可读性
+// HtmlDownloader 对象在构造函数中通过new来创建，违反了基于接口而非实现编程的设计思想
+// 从业务上 Document 网页文档没必要依赖HtmlDownloader，违背了迪米特法则
 
 
 

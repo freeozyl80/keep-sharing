@@ -27,7 +27,6 @@ export default class HelloKeep extends Vue {
   mounted() {
     this.hello("mounted!")
     console.log(this.keepService.getInfo())
-    this.author
   }
 }
 </script>

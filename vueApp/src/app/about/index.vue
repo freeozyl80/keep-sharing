@@ -18,7 +18,9 @@ import SomeService from './index.service.ts'
 export default defineComponent({
   data() {
     return {
-      xxx: {},
+      xxx: {
+        msg: null
+      },
       test: {
         msg: '123'
       }
@@ -57,7 +59,7 @@ export default defineComponent({
     }
   },
   mounted() {
-    this.xxx = this.test
+    this.xxx.msg = this.test.msg
   },
   methods: {
     testF() {

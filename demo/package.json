@@ -4,20 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "ts-node ./inject.ts --project tsconfig.json",
+    "test": "./node_modules/.bin/ts-node ./inject.ts --project ./tsconfig.json",
     "test2": "ts-node ./inject2.ts --project tsconfig.json",
     "test3": "ts-node ./interface_abstract.ts --project tsconfig.json",
     "test4": "ts-node ./error.ts --project tsconfig.json",
-    "test5": "ts-node ./polymorphism.ts --project tsconfig.json"
+    "test5": "ts-node ./polymorphism.ts --project tsconfig.json",
+    "test6": "ts-node ./combine.ts --project tsconfig.json",
+    "demo": "ts-node ./$name.ts --project tsconfig.json"
   },
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "@types/node": "^16.3.1",
-    "tslib": "^2.3.0"
-  },
   "dependencies": {
     "reflect-metadata": "^0.1.13",
-    "ts-node": "^10.1.0"
+    "ts-node": "^9.1.1",
+    "tslib": "^2.3.0",
+    "typescript": "^4.3.5"
   }
 }

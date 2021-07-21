@@ -9,6 +9,7 @@
 
    
 ```javascript 
+
 class Alert {
 	private rule: AlertRule; 
 	private notification: Notification;
@@ -31,7 +32,6 @@ class Alert {
 	}
  }
 ``` 
-   // 增加一个每秒钟接口超时请求个数 超过 预先值 的告警
 
 
    改进：
