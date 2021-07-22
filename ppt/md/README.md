@@ -613,10 +613,10 @@ demoFunction(new SecurityTransporter(/*省略参数*/))
 Case1
 ```javascript
 interface UserService { 
-   register(String cellphone, String password): boolean;
-   login(String cellphone, String password): boolean ;
-   getUserInfoById(long id): UserInfo;
-   getUserInfoByCellphone(String cellphone): UserInfo;
+   register(cellphone: string, password: string): boolean;
+   login(cellphone: string, password: string): boolean ;
+   getUserInfoById(id: numher): UserInfo;
+   getUserInfoByCellphone(cellphone: string): UserInfo;
 }
 
 public class UserServiceImpl implements UserService { 
@@ -625,8 +625,8 @@ public class UserServiceImpl implements UserService {
 // 这里思考我们如果需要删除用户的接口呢 ？ 
 
 interface RestrictedUserService { 
-   deleteUserByCellphone(String cellphone): boolean; 
-   deleteUserById(long id): boolean;
+   deleteUserByCellphone(cellphone: string): boolean; 
+   deleteUserById(id: number): boolean;
 }
 public class UserServiceImpl implements UserService, RestrictedUserService {
  // ...省略实现代码...
@@ -1204,12 +1204,12 @@ Vue版本：
 
 
 
-### 设计模式
+## 设计模式
 [git推荐,23种设计模式](https://github.com/FantZero/Design-Pattern.git)
 
 
 
-### 终章
+## 终章
 程序设计思想，原则都是相通的，都是为了架构设计铺垫
 
 <desc>其实这里推荐看看nest.js的代码</desc>
